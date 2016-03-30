@@ -7,10 +7,33 @@
 </head>
 <body>
 
+  <div class="number-form">
+    <input placeholder="New number">
+    <button>Store</button>
+  </div>
+
+  <div class="number-list"></div>
+  <div class="number-sum"></div>
+  <div class="number-product"></div>
+
   <script src="/vendor.js" charset="utf-8"></script>
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+    const NumberManager = require("number-manager")
+    const manager = new NumberManager()
+
+    const NumberListView = require("number-list-view")
+    new NumberListView(document.querySelector(".number-list"))
+
+    const SumView = require("sum-view")
+    new SumView(document.querySelector(".number-sum"))
+
+    const ProductView = require("product-view")
+    new ProductView(document.querySelector(".number-product"))
+
+    const StoreNumberView = require("store-number-view")
+    new StoreNumberView(document.querySelector(".number-form"))
   </script>
 </body>
 </html>
